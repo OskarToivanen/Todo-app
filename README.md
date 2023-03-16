@@ -9,3 +9,5 @@ Database: MongoDB is used as the database to store the todo items. Each item con
 Functionality: The app allows users to add new tasks with a title and an optional description. The tasks can be marked as completed by checking the checkbox next to each item. Users can also update the title and description of a task by double-clicking on it and saving the changes. Tasks can be deleted using the delete button next to each item.
 
 Overall, this Todo app serves as a simple and effective task management tool, showcasing the integration of various web technologies to create a full-stack application.
+
+Made by Oskar Toivanen @2023
