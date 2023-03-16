@@ -12,13 +12,16 @@ const NewItemForm: React.FC<NewItemFormProps> = ({ onNewItem }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const newItem = { title, description } // Include description in the newItem object
-    const response = await fetch('http://localhost:5000/api/items', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newItem),
-    })
+    const response = await fetch(
+      'https://fancy-salamander-d1d73a.netlify.app/api/items',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newItem),
+      }
+    )
     const data = await response.json()
     onNewItem(data)
     setTitle('')

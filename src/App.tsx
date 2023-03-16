@@ -9,7 +9,9 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:5000/api/items')
+      const response = await fetch(
+        'https://fancy-salamander-d1d73a.netlify.app/api/items'
+      )
       const data = await response.json()
       setTodos(data)
     }
