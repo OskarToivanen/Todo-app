@@ -41,45 +41,36 @@ const TodoItem: React.FC<TodoItemProps> = ({
       ...{ _id, title, description, completed, createdAt },
       completed: !completed,
     }
-    await fetch(
-      `https://fancy-salamander-d1d73a.netlify.app/api/items/${_id}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedItem),
-      }
-    )
+    await fetch(`https://todolistserver.herokuapp.com/api/items/${_id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedItem),
+    })
     onItemUpdate(updatedItem)
   }
 
   const handleDelete = async () => {
-    await fetch(
-      `https://fancy-salamander-d1d73a.netlify.app/api/items/${_id}`,
-      {
-        method: 'DELETE',
-      }
-    )
+    await fetch(`https://todolistserver.herokuapp.com/api/items/${_id}`, {
+      method: 'DELETE',
+    })
     onItemDelete(_id)
   }
 
   const handleEditSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    await fetch(
-      `https://fancy-salamander-d1d73a.netlify.app/api/items/${_id}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...{ _id, title, description, completed, createdAt },
-          title: editedTitle,
-          description: editedDescription,
-        }),
-      }
-    )
+    await fetch(`https://todolistserver.herokuapp.com/api/items/${_id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...{ _id, title, description, completed, createdAt },
+        title: editedTitle,
+        description: editedDescription,
+      }),
+    })
     onItemUpdate({
       ...{ _id, title, description, completed, createdAt },
       title: editedTitle,

@@ -13,7 +13,7 @@ const NewItemForm: React.FC<NewItemFormProps> = ({ onNewItem }) => {
     e.preventDefault()
     const newItem = { title, description } // Include description in the newItem object
     const response = await fetch(
-      'https://fancy-salamander-d1d73a.netlify.app/api/items',
+      'https://todolistserver.herokuapp.com/api/items',
       {
         method: 'POST',
         headers: {

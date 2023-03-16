@@ -10,7 +10,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        'https://fancy-salamander-d1d73a.netlify.app/api/items'
+        'https://todolistserver.herokuapp.com/api/items'
       )
       const data = await response.json()
       setTodos(data)
