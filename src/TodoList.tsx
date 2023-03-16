@@ -1,5 +1,5 @@
 import React from 'react'
-import TodoItem, { TodoItemProps, TodoItemType } from './TodoItem' // Import TodoItemType from TodoItem.tsx
+import TodoItem, { TodoItemType } from './TodoItem'
 import { List, Paper } from '@mui/material'
 
 interface TodoListProps {
